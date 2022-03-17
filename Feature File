@@ -1,0 +1,145 @@
+
+Scenario: Login to admin view 
+Given : I login into express dls
+Then: I should see the "hands-on table" page with these columns
+
+  | Priority |
+  | household ID  |  
+  | Primary First Name  | 
+  | Primary Last Name   | 
+  | Secondary Contact Full Name  | 
+  | Phone 1   |  
+  | Phone 2   | 
+  | Email 1   | 
+  | Email 2   |          
+  | Street Address |  
+  | City     |               
+  | State    |          
+  | Zip      |                   
+  | RV Owner | 
+  | Age      | 
+  | Income   | 
+  | Marital Status         | 
+  | Program                | 
+  | Marketing Participant  | 
+  | Promotion              | 
+  | Campaign Description   |     
+  | Campaign Resort        | 
+  | metaState(State of the campaign)   |               
+  | Lead Date                          | 
+  | Assigned Agent                     | 
+  | Total Outbound Calls (pre-calc)    |     
+  | Total Inbound Calls (pre- calc)    |             
+  | Total Inbound Calls                | 
+  | Total Live Calls (pre-calc)        |  
+  | Latest Five9 disposition.          | 
+  
+  
+Scenario: Auto assign leads
+Given: If we want to assign leads to agent
+Then: Auto assign leads to agents by using Round Robin   
+
+Scenario: Login to Agent view
+Given :I login into express dls as an Agent
+Then: I can view the logged in agent's Assigned households only.
+
+Scenario: Supervisor view
+Given : I login into express dls as a Supervisor
+Then: I should see the "hands-on table" page with supervisor view
+
+Scenario: Phone number are clickable
+Given: The phone numbers in the table are clickable 
+Then: Agent clicks phone to call
+
+Scenario: Agent clicks to phone call
+Given: Agent clicks phone to call 
+Then: Call is opened in Five9 HTML Web
+
+Scenario: Call is opened in Five9 HTML Web
+Given: Call is opened in Five9 HTML Web 
+Then: Call opens household in Engage connector
+
+Scenario: updates the assignee collection
+Given: TRA index consumer updates the assignee collection
+Then: assignee collection should be updated
+
+
+Scenario: Write a consumer to ingest MOR leads into dls collection
+Given: Consumer writes MOR leads 
+Then: MOR leads will be ingested into dls collection
+
+Scenario: When a new lead for an already assigned lead is ingested
+Given: I see new lead for an already assigned lead is ingested 
+Then: It should also show up under the same household which was already assigned to the user
+
+
+
+Scenario: Do change detection to trigger webhook for updated lead
+Given: Change detection for updated lead
+Then:  detection to trigger webhook for updated lead should be changed
+
+Scenario: Automate the flow of agents pre assignment when a new lead comes in the consumer
+Given: When a new lead comes in
+Then:  Automate the flow of agents pre assignment
+
+
+Scenario: Latest MOR leads 
+Given: I want to view MOR Leads
+Then:  Latest MOR leads should be displayed
+
+Scenario: Latest MOR leads 
+Given: I want to view MOR Leads
+Then:  Latest MOR leads should be displayed
+
+
+Scenario:  Multiple leads from the same household cannot be assigned 
+Given: 
+Then:
+
+Scenario: PPP payload flow should be same for marketing & members and not hardcoded
+Given: 
+Then: 
+
+Scenario: PPP payload flow should be same for marketing & members and not hardcoded
+Given: 
+Then: 
+
+Given: Admin assign agent to a group of leads 
+Then: agent will be assigned or able to see to a group of leads
+
+scenario: Leads listed in priority #confirm from rosailie
+Given: Leads are grouped and listed in order of priority 1 - 5 
+Then: Agents cannot change their sort order
+
+Scenario: Admin needs to filter 
+Given: I apply filter on hands-on table 
+Then: The filter should be applied on all pages
+
+Scenario: Admin needs Server-side Pagination 
+Given: I apply server-side pagination on hands-on table 
+Then: The server-side pagination should be applied on all pages
+
+
+
+Scenario: removing and adding lead to hands on table
+
+Given: I apply tour final disposition equals to no show
+Then: add lead back to hands on table
+
+Given: I apply tour final disposition equals to no tour 
+Then: add lead back to hands on table
+
+Given: I apply tour final disposition equals to booked 
+Then: remove lead from hands on table
+
+
+Scenario: Remove dependency from elastic
+Given: 
+Then: 
+
+
+Scenario: Update rules for upgrade DLS to pick only members from collection
+Given: 
+Then: 
+
+
